@@ -1,0 +1,14 @@
+version: 0.1
+
+phases:
+ install:
+  commands:
+   - echo install started on `date`
+   - npm install serverless -g
+   - npm install
+   - serverless --version
+   - serverless deploy
+   - echo install completed on `date`
+artifacts:
+ files:
+  - '**/*'

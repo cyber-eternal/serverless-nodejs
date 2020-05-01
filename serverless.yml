@@ -1,0 +1,69 @@
+service: boilerplate_serverless_nodejs
+
+plugins:
+  - serverless-webpack
+  - serverless-offline
+  - serverless-plugin-split-stacks
+  - serverless-prune-plugin
+custom: 
+  stage: ${opt:stage, self:provider.stage}
+  region: ${opt:region, self:provider.region}
+  prefix: ${self:custom.stage}-${self:service}
+  # user_pool_id: ${env:USER_POOL_ID}
+  # user_pool_arn: ${env:USER_POOL_ARN}
+  webpackIncludeModules: true
+  babelOptions:
+    presets: ['es2015', 'es2016']
+  # For split stack and prevent Cloud Formation resources limit error
+  splitStacks:
+    perFunction: false
+    perType: true
+    perGroupFunction: false
+  prune:
+    automatic: true
+    number: 1
+provider:
+  name: aws
+  runtime: nodejs10.x
+  region: us-east-1
+  stage: dev
+  timeout: 30  # Can be changed to your timeout for lambdas, or set for each lambda
+  memorySize: 1024 # Can be changed to your memory size
+  # Use your VPC network
+  # vpc:
+  #   securityGroupIds:
+  #     - "sg-11111"
+  #   subnetIds:
+  #     - "subnet-11111"
+  #     - "subnet-1111"
+  environment: 
+    NODE_ENV: ${self:custom.stage}
+# For set IAM rules to lambdas
+# iamRoleStatements:
+#       - Effect: "Allow"
+#         Action:
+#           - cognito-idp:AdminGetUser
+package:
+  include:
+    - node_modules
+  exclude:
+    - node_modules/aws-sdk/**
+# Lambdas
+functions:
+  Test:
+    handler: controllers/index.handler
+    # timeout: 30
+    events:
+      - http:
+          path: /test
+          method: GET
+          cors: true
+# CloudFormation template syntax, for create resources
+# resources:
+#   Resources:
+#     Example:
+#       Type: AWS::SQS::Queue
+#       Properties:
+#         QueueName: example
+#         MessageRetentionPeriod: 1209600
+#         VisibilityTimeout: 9001

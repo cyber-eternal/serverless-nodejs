@@ -1,0 +1,14 @@
+{
+  "plugins": [
+    "transform-async-to-generator",
+    "transform-object-rest-spread"
+  ],
+  "ignore": ["node_modules"],
+  "presets": [
+    ["env", {
+      "targets": {
+        "node": "8.10"
+      }
+    }]
+  ]
+}

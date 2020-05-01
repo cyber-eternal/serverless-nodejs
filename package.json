@@ -1,0 +1,51 @@
+{
+  "name": "boilerplate_serverless_nodejs",
+  "version": "1.0.0",
+  "description": " using node.js, serverless, AWS, babel, webpack",
+  "directories": {},
+  "scripts": {
+    "lint": "eslint .",
+    "precommit": "npm run lint",
+    "prepush": "npm run lint"
+  },
+  "author": "cyber-eternal",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.3",
+    "babel-plugin-transform-async-to-generator": "^6.24.1",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2016": "^6.24.1",
+    "babel-register": "^6.26.0",
+    "braces": ">=2.3.1",
+    "diff": "^4.0.2",
+    "eslint": "^5.1.0",
+    "eslint-config-airbnb-base": "12.1.0",
+    "eslint-plugin-import": "2.8.0",
+    "eslint-plugin-mocha": "^5.1.0",
+    "serverless-offline": "^3.25.6",
+    "serverless-plugin-split-stacks": "^1.9.3",
+    "serverless-prune-plugin": "^1.4.2",
+    "serverless-webpack": "^3.1.2",
+    "shebang-loader": "0.0.1",
+    "webpack": "^3.7.1",
+    "webpack-node-externals": "^1.6.0"
+  },
+  "dependencies": {
+    "amazon-cognito-identity-js": "^3.3.3",
+    "aws-sdk": "^2.658.0",
+    "csvtojson": "^2.0.10",
+    "json2csv": "^5.0.1",
+    "kind-of": "^6.0.3",
+    "lodash": "^4.17.15",
+    "moment-timezone": "^0.5.28",
+    "mongoose": "^5.9.9",
+    "redis": "^2.8.0",
+    "request": "^2.88.2",
+    "sequelize": "^4.44.4",
+    "uuid": "^3.4.0"
+  }
+}
