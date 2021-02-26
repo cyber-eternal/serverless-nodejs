@@ -1,7 +1,7 @@
 {
-  "name": "boilerplate_serverless_nodejs",
+  "name": "serverless-nodejs",
   "version": "1.0.0",
-  "description": " using node.js, serverless, AWS, babel, webpack",
+  "description": "Template based on node.js, serverless, AWS, babel, webpack",
   "directories": {},
   "scripts": {
     "lint": "eslint .",
@@ -26,26 +26,26 @@
     "eslint-config-airbnb-base": "12.1.0",
     "eslint-plugin-import": "2.8.0",
     "eslint-plugin-mocha": "^5.1.0",
-    "serverless-offline": "^3.25.6",
-    "serverless-plugin-split-stacks": "^1.9.3",
-    "serverless-prune-plugin": "^1.4.2",
-    "serverless-webpack": "^3.1.2",
+    "serverless-offline": "6.8.0",
+    "serverless-plugin-split-stacks": "1.11.0",
+    "serverless-prune-plugin": "1.4.3",
+    "serverless-webpack": "5.3.5",
     "shebang-loader": "0.0.1",
-    "webpack": "^3.7.1",
-    "webpack-node-externals": "^1.6.0"
+    "webpack": "5.24.1",
+    "webpack-node-externals": "2.5.2"
   },
   "dependencies": {
-    "amazon-cognito-identity-js": "^3.3.3",
-    "aws-sdk": "^2.658.0",
-    "csvtojson": "^2.0.10",
-    "json2csv": "^5.0.1",
+    "amazon-cognito-identity-js": "3.3.3",
+    "aws-sdk": "2.814.0",
+    "csvtojson": "2.0.10",
+    "json2csv": "5.0.1",
     "kind-of": "^6.0.3",
-    "lodash": "^4.17.15",
-    "moment-timezone": "^0.5.28",
-    "mongoose": "^5.9.9",
-    "redis": "^2.8.0",
+    "lodash": "4.17.21",
+    "moment-timezone": "0.5.28",
+    "mongoose": "5.11.7",
+    "redis": "2.8.0",
     "request": "^2.88.2",
     "sequelize": "^4.44.4",
-    "uuid": "^3.4.0"
+    "uuid": "3.4.0"
   }
 }

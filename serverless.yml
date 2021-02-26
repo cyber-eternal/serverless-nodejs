@@ -1,4 +1,4 @@
-service: boilerplate_serverless_nodejs
+service: serverless-nodejs
 
 plugins:
   - serverless-webpack
@@ -11,7 +11,8 @@ custom:
   prefix: ${self:custom.stage}-${self:service}
   # user_pool_id: ${env:USER_POOL_ID}
   # user_pool_arn: ${env:USER_POOL_ARN}
-  webpackIncludeModules: true
+  webpack:
+    webpackConfig: ./webpack.config.js
   babelOptions:
     presets: ['es2015', 'es2016']
   # For split stack and prevent Cloud Formation resources limit error
